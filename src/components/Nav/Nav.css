@@ -1,0 +1,17 @@
+.navbar{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px;
+    z-index: 2;
+    color: white;
+}
+.navbar__black{background-color: rgb(0,0,0,0.2);}
+.nav_links{
+    display: flex;
+}
+.nav_links p{margin-right: 20px;}
+.logo{color: white;}
