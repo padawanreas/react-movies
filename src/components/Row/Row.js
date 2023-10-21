@@ -19,7 +19,7 @@ function Row({ title, fetchUrl }) {
       <div className="row__images">
         {medias.map((media) => (
           <div key={media.id}>
-            <Link to={`${media.id}`}>
+            <Link to="/detail">
               {
                 <img
                   src={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
