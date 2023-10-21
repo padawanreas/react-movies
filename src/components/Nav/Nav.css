@@ -9,7 +9,7 @@
     z-index: 2;
     color: blue;
 }
-.navbar__black{background-color: transparent}
+.navbar__black{background-color: transparent;}
 .nav_links{
     display: flex;
 }

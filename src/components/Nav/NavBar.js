@@ -5,11 +5,14 @@ import { NavLink, Outlet } from "react-router-dom";
 
 function NavBar() {
   const [navBlack, setNavBlack] = useState(false);
-  /*
+
   const transitionNav = () => {
     window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
   };
-  */
+  useState(() => {
+    document.addEventListener("scroll", transitionNav);
+  });
+
   const navStyle = ({ isActive }) => {
     return {
       color: isActive ? "red" : "blue",
