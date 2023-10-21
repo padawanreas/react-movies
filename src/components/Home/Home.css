@@ -1,0 +1,41 @@
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+.banner__content img{
+    width: 100%;
+    height: 90vh;
+}
+.banner__text__content{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+   width: 100%;
+}
+
+.banner__text{
+    color: white;
+    padding: 150px;
+}
+.banner__text h1{line-height: 5rem;}
+.banner__text p{line-height: 1.5;font-size: 1.3rem;}
+.btn-info{
+  margin-top: 20px;
+  background-color: red;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.swiper-button-prev,.swiper-button-next{color:red}
