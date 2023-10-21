@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { API_KEY, baseUrl } from "../Configs/Api";
+import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import "./Banner.css";
+import "./Home.css";
 
 function HomeBanner() {
   const [medias, setMedias] = useState([]);
   useEffect(() => {
     const fetchMedia = async () => {
       const response = await axios.get(
-        `${baseUrl}/trending/all/day?api_key=${API_KEY}&language=fr-FR`
+        `${BASE_URL}/trending/all/day?api_key=${API_KEY}&language=fr-FR`
       );
       setMedias(response.data.results);
     };
@@ -25,7 +24,7 @@ function HomeBanner() {
 
   return (
     <>
-      <div className="banner">
+      <div className="banner_content">
         <Swiper
           centeredSlides={true}
           loop={true}
@@ -36,9 +35,9 @@ function HomeBanner() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          {medias.map((media) => (
-            <SwiperSlide key={media.id}>
-              <div className="banner__content">
+          <div lassName="banner__content">
+            {medias.map((media) => (
+              <SwiperSlide key={media.id}>
                 <img
                   key={media.id}
                   src={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
@@ -58,9 +57,9 @@ function HomeBanner() {
                     </div>
                   </div>
                 }
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
+          </div>
         </Swiper>
       </div>
     </>
