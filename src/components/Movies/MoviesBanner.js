@@ -35,7 +35,7 @@ function MoviesBanner() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <div lassName="banner__content">
+          <div className="banner__content">
             {movies.map((media) => (
               <SwiperSlide key={media.id}>
                 <img
