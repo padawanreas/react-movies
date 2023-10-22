@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SiThemoviedatabase } from "react-icons/si";
 import "../Nav/Nav.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [navBlack, setNavBlack] = useState(false);
@@ -36,9 +36,6 @@ function NavBar() {
             series
           </NavLink>
         </div>
-      </div>
-      <div>
-        <Outlet />
       </div>
     </>
   );
