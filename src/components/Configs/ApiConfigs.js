@@ -7,6 +7,9 @@ const requests = {
   moviesUpcoming: `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`,
   moviesTopRated: `${BASE_URL}/movie/top_rated?api_key=${API_KEY}`,
   moviesPopular: `${BASE_URL}/movie/popular?api_key=${API_KEY}`,
+  seriesPopular: `${BASE_URL}/tv/popular?api_key=${API_KEY}`,
+  seriesAirling: `${BASE_URL}/tv/airing_today?api_key=${API_KEY}`,
+  seriesTopRated: `${BASE_URL}/tv/top_rated?api_key=${API_KEY}`,
 };
 
 export default requests;
