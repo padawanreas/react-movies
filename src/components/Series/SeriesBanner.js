@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "../Home/Home.css";
+import { Link } from "react-router-dom";
 
 function SeriesBanner() {
   const [series, setSeries] = useState([]);
@@ -35,7 +36,7 @@ function SeriesBanner() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <div lassName="banner__content">
+          <div className="banner__content">
             {series.map((serie) => (
               <SwiperSlide key={serie.id}>
                 <img
@@ -53,7 +54,9 @@ function SeriesBanner() {
                       </h1>
                       <p>{serie.overview}</p>
 
-                      <button className="btn-info">More info</button>
+                      <Link to="/detail">
+                        <button className="btn-info">More info</button>
+                      </Link>
                     </div>
                   </div>
                 }
