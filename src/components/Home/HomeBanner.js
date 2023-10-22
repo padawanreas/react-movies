@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function HomeBanner() {
   const [medias, setMedias] = useState([]);
@@ -35,7 +36,7 @@ function HomeBanner() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <div lassName="banner__content">
+          <div className="banner__content">
             {medias.map((media) => (
               <SwiperSlide key={media.id}>
                 <img
@@ -53,7 +54,9 @@ function HomeBanner() {
                       </h1>
                       <p>{media.overview}</p>
 
-                      <button className="btn-info">More info</button>
+                      <Link to="/detail">
+                        <button className="btn-info">More info</button>
+                      </Link>
                     </div>
                   </div>
                 }
