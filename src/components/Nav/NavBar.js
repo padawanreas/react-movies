@@ -15,7 +15,7 @@ function NavBar() {
 
   const navStyle = ({ isActive }) => {
     return {
-      color: isActive ? "red" : "blue",
+      color: isActive ? "red" : "white",
       hover: "red",
       marginRight: "10px",
       textDecoration: "none",
@@ -24,8 +24,8 @@ function NavBar() {
   return (
     <>
       <div className={`navbar ${navBlack || "navbar__black"}`}>
-        <NavLink to="/" style={navStyle}>
-          <SiThemoviedatabase size={50} />
+        <NavLink to="/">
+          <SiThemoviedatabase size={50} color="white" />
         </NavLink>
 
         <div className="nav_links">

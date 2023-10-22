@@ -7,11 +7,14 @@
     width: 100%;
     padding: 20px 50px;
     z-index: 2;
-    color: blue;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
 }
 .navbar__black{background-color: transparent;}
 .nav_links{
     display: flex;
 }
 .nav_links p{margin-right: 20px;}
-.logo{color: blue;}
+.logo{color: white;}
