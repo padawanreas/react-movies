@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
+//import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,18 +8,19 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import requests from "../Configs/ApiConfigs";
 
 function HomeBanner() {
   const [medias, setMedias] = useState([]);
+  const type = "all";
+
   useEffect(() => {
     const fetchMedia = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/trending/all/day?api_key=${API_KEY}&language=fr-FR`
-      );
+      const response = await axios.get(requests.trending(type));
       setMedias(response.data.results);
     };
     fetchMedia();
-  }, []);
+  }, [type]);
 
   console.log(medias);
 
@@ -54,7 +55,11 @@ function HomeBanner() {
                       </h1>
                       <p>{media.overview}</p>
 
-                      <Link to="/detail">
+                      <Link
+                        to={`/detail/${
+                          media.title || media.original_title || media.name
+                        }`}
+                      >
                         <button className="btn-info">More info</button>
                       </Link>
                     </div>
