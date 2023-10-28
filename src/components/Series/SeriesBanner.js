@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
+//import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
+import requests from "../Configs/ApiConfigs";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,11 +12,10 @@ import { Link } from "react-router-dom";
 
 function SeriesBanner() {
   const [series, setSeries] = useState([]);
+  const type = "tv";
   useEffect(() => {
     const fetchserie = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/tv/on_the_air?api_key=${API_KEY}&language=fr-FR`
-      );
+      const response = await axios.get(requests.onTheAir(type));
       setSeries(response.data.results);
     };
     fetchserie();

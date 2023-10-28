@@ -29,7 +29,7 @@ function NavBar() {
         </NavLink>
 
         <div className="nav_links">
-          <NavLink to="/movie" className="nav__link" style={navStyle}>
+          <NavLink to="/movies" className="nav__link" style={navStyle}>
             movies
           </NavLink>
           <NavLink to="/tv" className="nav__link" style={navStyle}>
