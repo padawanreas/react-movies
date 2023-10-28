@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
+//import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
 import requests from "../Configs/ApiConfigs";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
