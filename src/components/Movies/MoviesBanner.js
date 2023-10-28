@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { API_KEY, BASE_URL } from "../Configs/ApiConfigs";
+import requests from "../Configs/ApiConfigs";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,14 +8,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "../Home/Home.css";
+import { Link } from "react-router-dom";
 
 function MoviesBanner() {
   const [movies, setMovies] = useState([]);
+  const type = "movie";
+
   useEffect(() => {
     const fetchMedia = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=fr-FR`
-      );
+      const response = await axios.get(requests.nowPlaying(type));
       setMovies(response.data.results);
     };
     fetchMedia();
@@ -52,8 +54,13 @@ function MoviesBanner() {
                         {media.title || media.original_title || media.name}
                       </h1>
                       <p>{media.overview}</p>
-
-                      <button className="btn-info">More info</button>
+                      <Link
+                        to={`detail/${
+                          media.title || media.original_title || media.name
+                        }`}
+                      >
+                        <button className="btn-info">More info</button>
+                      </Link>
                     </div>
                   </div>
                 }
