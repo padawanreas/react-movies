@@ -13,14 +13,6 @@ function NavBar() {
     document.addEventListener("scroll", transitionNav);
   });
 
-  const navStyle = ({ isActive }) => {
-    return {
-      color: isActive ? "red" : "white",
-      hover: "red",
-      marginRight: "10px",
-      textDecoration: "none",
-    };
-  };
   return (
     <>
       <div className={`navbar ${navBlack || "navbar__black"}`}>
