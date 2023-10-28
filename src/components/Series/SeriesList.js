@@ -3,11 +3,12 @@ import Row from "../Row/Row";
 import requests from "../Configs/ApiConfigs";
 
 function SeriesList() {
+  const type = "tv";
   return (
     <>
-      <Row title="Airling Today" fetchUrl={requests.seriesAirling} />
-      <Row title="Top Rated" fetchUrl={requests.seriesTopRated} />
-      <Row title="Popular" fetchUrl={requests.seriesPopular} />
+      <Row title="Airling Today" fetchUrl={requests.airling(type)} />
+      <Row title="Top Rated" fetchUrl={requests.topRated(type)} />
+      <Row title="Popular" fetchUrl={requests.popular(type)} />
     </>
   );
 }
