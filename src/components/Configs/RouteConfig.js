@@ -7,7 +7,6 @@ const RouteConfig = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-
       <Route path="/detail/:id/:name" element={<Detail />} />
     </Routes>
   );
