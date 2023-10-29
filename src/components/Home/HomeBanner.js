@@ -56,9 +56,7 @@ function HomeBanner() {
                       <p>{media.overview}</p>
 
                       <Link
-                        to={`/detail/${
-                          media.title || media.original_title || media.name
-                        }`}
+                        to={`/detail/${media.media_type}/${media.title}/${media.id}`}
                       >
                         <button className="btn-info">More info</button>
                       </Link>
