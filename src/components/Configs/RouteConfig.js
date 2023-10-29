@@ -7,7 +7,7 @@ const RouteConfig = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/detail/:id/:name" element={<Detail />} />
+      <Route path="/detail/:type/:name/:id" element={<Detail />} />
     </Routes>
   );
 };
