@@ -13,7 +13,7 @@ function Row({ title, fetchUrl }) {
     };
     fetchMedia();
   }, [fetchUrl]);
-
+  console.log(medias);
   return (
     <div className="row">
       <h2 className="row__title">{title}</h2>
@@ -21,7 +21,11 @@ function Row({ title, fetchUrl }) {
         {medias &&
           medias.map((media) => (
             <div key={media.id}>
-              <Link to="/detail">
+              <Link
+                to={`/detail/${media.media_type}/${
+                  media?.title || media?.name || media?.original_title
+                }/${media.id}`}
+              >
                 {
                   <img
                     src={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
